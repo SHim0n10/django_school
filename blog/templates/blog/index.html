@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    {% if posty %}
+    <h1>Blog</h1>
+    <ul>
+        {% for post in posty %}
+        <li>{{post.nazov}} <br> {{post.kategoria}} <br> {{post.autor}} <br> {{post.cas}} <br> {{post.text}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if kategorie %}
+    <h2>Kategorie:</h2>
+    <ul>
+        {% for kategoria in kategorie %}
+        <li>{{kategoria.nazov}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if uzivatelia %}
+    <h2>Uzivatelia:</h2>
+    <ul>
+        {% for uzivatel in uzivatelia %}
+        <li>{{uzivatel.nick}} {{uzivatel.meno}} {{uzivatel.priezvisko}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    
+
+</body>
+</html>

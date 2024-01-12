@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+    <h1>Shop</h1>
+    {% if kategorie %}
+    <h2>Kategorie:</h2>
+    <ul>
+        {% for kategoria in kategorie %}
+        <li>{{kategoria}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if produkty %}
+    <h2>Produkty:</h2>
+    <ul>
+        {% for produkt in produkty %}
+        <li>{{produkt.nazov}} {{produkt.cena}} € {{produkt.popis}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if uzivatelia %}
+    <h2>Uzivatelia:</h2>
+    <ul>
+        {% for uzivatel in uzivatelia %}
+        <li>{{uzivatel}} {{uzivatel.email}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if objednavky %}
+    <h2>Objednávky:</h2>
+    <ul>
+        {% for objednavka in objednavky %}
+        <li><strong>ID:</strong>{{objednavka.id_objednavky}} <br><strong>Produkt:</strong> {{objednavka.product.product_id}} {{objednavka.product.nazov}}<br><strong>Užívateľ:</strong> {{objednavka.uzivatel.meno}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+
+</body>
+</html>
