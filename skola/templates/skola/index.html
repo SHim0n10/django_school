@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moja škola</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'skola/style.css' %}">
 </head>
 <body>
     <h1>Moja škola</h1>
+    <img src="{% static 'skola/image.jpg' %}" alt="School Image" style="max-width: 40%;">
     {% if triedy %}
     <h2>Triedy:</h2>
     <ul>
@@ -15,6 +18,7 @@
         {% endfor %}
     </ul>
     {% endif %}
+
     {% if ucitelia %}
     <h2>Učitelia:</h2>
     <ul>
@@ -23,6 +27,7 @@
         {% endfor %}
     </ul>
     {% endif %}
+
     {% if studenti %}
     <h2>Študenti:</h2>
     <ul>
@@ -31,6 +36,5 @@
         {% endfor %}
     </ul>
     {% endif %}
-
 </body>
 </html>

@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
 </head>
 <body>
     {% if posty %}
     <h1>Blog</h1>
+    <div class="post-image">
+    <img src="{% static 'blog/image.jpg' %}" alt="School Image" style="max-width: 30%; margin-bottom: 10px;">
+    </div>
     <ul>
         {% for post in posty %}
-        <li>{{post.nazov}} <br> {{post.kategoria}} <br> {{post.autor}} <br> {{post.cas}} <br> {{post.text}}</li>
+        <li>
+            <strong>{{post.nazov}}</strong><br>
+            Kategória: {{post.kategoria}}<br>
+            Autor: {{post.autor}}<br>
+            Čas: {{post.cas}}<br>
+            {{post.text}}
+        </li>
         {% endfor %}
     </ul>
     {% endif %}
     {% if kategorie %}
-    <h2>Kategorie:</h2>
+    <h2>Kategórie:</h2>
     <ul>
         {% for kategoria in kategorie %}
         <li>{{kategoria.nazov}}</li>
@@ -23,15 +34,12 @@
     </ul>
     {% endif %}
     {% if uzivatelia %}
-    <h2>Uzivatelia:</h2>
+    <h2>Užívatelia:</h2>
     <ul>
         {% for uzivatel in uzivatelia %}
-        <li>{{uzivatel.nick}} {{uzivatel.meno}} {{uzivatel.priezvisko}}</li>
+        <li>{{uzivatel.nick}} - {{uzivatel.meno}} {{uzivatel.priezvisko}}</li>
         {% endfor %}
     </ul>
     {% endif %}
-    
-    
-
 </body>
 </html>
