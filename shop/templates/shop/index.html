@@ -15,7 +15,7 @@
         <h2>Kategorie:</h2>
         <ul>
             {% for kategoria in kategorie %}
-            <li>{{kategoria}}</li>
+            <li><a href="{% url 'kategoria' kategoria=kategoria %}">{{kategoria}}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
@@ -24,11 +24,12 @@
         <h2>Produkty:</h2>
         <ul>
             {% for produkt in produkty %}
+            <a href="{% url 'produkt' produkt=produkt %}">
             <li>
                 <strong>{{produkt.nazov}}</strong><br>
-                Cena: {{produkt.cena}} €<br>
-                Popis: {{produkt.popis}}
+                Cena: {{produkt.cena}} €
             </li>
+            </a>
             {% endfor %}
         </ul>
         {% endif %}

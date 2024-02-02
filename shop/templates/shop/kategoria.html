@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/style.css' %}">
+</head>
+<body>
+    <main>
+        <h1>Shop</h1>
+        <h2>{{kategoria}}</h2>
+        <ul>
+            {% for produkt in produkty %}
+            <a href="{% url 'produkt' produkt=produkt %}">
+            <li>
+                <strong>{{produkt.nazov}}</strong><br>
+                Cena: {{produkt.cena}} €
+            </li>
+            </a>
+            {% endfor %}
+        </ul>
+        <img src="{% static 'shop/image.jpg' %}" alt="Shop Image" style="max-width: 50%; margin-left: 25%;">
+    </main>
+</body>
+</html>
