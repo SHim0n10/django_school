@@ -1,39 +1,29 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja škola</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'skola/style.css' %}">
-</head>
-<body>
-    <h1>Moja škola</h1>
+{% extends "base.html" %}
+{% block content %}
     {% if triedy %}
-    <h2><a href="{% url 'triedy' %}">Triedy:</a></h2>
-    <ul>
+    <h2>Triedy</h2>
+    <ul class="list-group">
         {% for trieda in triedy %}
-        <li><a href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></li>
+        <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></li>
         {% endfor %}
     </ul>
     {% endif %}
 
     {% if ucitelia %}
-    <h2><a href="{% url 'ucitelia' %}">Učitelia:</a></h2>
-    <ul>
+    <h2>Učitelia</h2>
+    <ul class="list-group">
         {% for ucitel in ucitelia %}
-        <li>{{ucitel}}</li>
+        <li class="list-group-item">{{ucitel}}</li>
         {% endfor %}
     </ul>
     {% endif %}
 
     {% if studenti %}
-    <h2><a href="{% url 'studenti' %}">Študenti:</a></h2>
-    <ul>
+    <h2>Študenti</h2>
+    <ul class="list-group">
         {% for student in studenti %}
-        <li>{{student}}</li>
+        <li class="list-group-item">{{student}}</li>
         {% endfor %}
     </ul>
     {% endif %}
-    <img src="{% static 'skola/image.jpg' %}" alt="School Image" style="max-width: 40%;">
-</body>
-</html>
+{% endblock content %}

@@ -1,12 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja škola</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'skola/style.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     {% if trieda %}
     <h1>{{trieda}}</h1>
     {% endif %}
@@ -19,12 +12,10 @@
 
     {% if studenti %}
     <h2>Študenti:</h2>
-    <ul>
+    <ul class="list-group">
         {% for student in studenti %}
-        <li>{{student}}</li>
+        <li class="list-group-item">{{student}}</li>
         {% endfor %}
     </ul>
     {% endif %}
-    <img src="{% static 'skola/image.jpg' %}" alt="School Image" style="max-width: 40%;">
-</body>
-</html>
+{% endblock content %}
