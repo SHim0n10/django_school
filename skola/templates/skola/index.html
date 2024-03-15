@@ -13,7 +13,7 @@
     <h2>Učitelia</h2>
     <ul class="list-group">
         {% for ucitel in ucitelia %}
-        <li class="list-group-item">{{ucitel}}</li>
+        <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=ucitel.id %}">{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</a>        </li>
         {% endfor %}
     </ul>
     {% endif %}
@@ -22,7 +22,7 @@
     <h2>Študenti</h2>
     <ul class="list-group">
         {% for student in studenti %}
-        <li class="list-group-item">{{student}}</li>
+        <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'student' student=student.id %}">{{student}}</a></li>
         {% endfor %}
     </ul>
     {% endif %}

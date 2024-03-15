@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Učiteľ: {{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
+    {% if trieda %}
+    <strong>Trieda: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a>
+    {%endif%}
+{% endblock content %}

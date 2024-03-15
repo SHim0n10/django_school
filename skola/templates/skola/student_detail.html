@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Študent: {{student.meno}} {{student.priezvisko}}</h2>
+    {% if trieda %}
+    <strong>Trieda: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a>
+    <br>
+    <strong>Triedny učiteľ: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=ucitel.id %}">{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</a>
+    {%endif%}
+{% endblock content %}
