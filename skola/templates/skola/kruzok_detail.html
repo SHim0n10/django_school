@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Krúžok: {{kruzok.nazov}}</h1>
+    <strong>Učiteľ:</strong>
+    <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=ucitel.id %}">{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</a>
+
+    {% if studenti %}
+    <h2>Študenti:</h2>
+    <ul class="list-group">
+        {% for student in studenti %}
+        <li class="list-group-item"><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'student' student=student.id %}">{{student.meno}} {{student.priezvisko}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock content %}
