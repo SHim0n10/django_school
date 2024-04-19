@@ -28,7 +28,10 @@ def vypis_ucitelia(request):
 
 def vypis_ucitel(request, ucitel):
     ucitel = Ucitel.objects.get(id=ucitel)
-    kruzok = Kruzok.objects.filter(ucitel=ucitel.pk)
+    try: 
+        kruzok = Kruzok.objects.get(ucitel=ucitel.pk)
+    except:
+        kruzok = ""
     if ucitel.trieda:
         trieda = Trieda.objects.get(id=ucitel.trieda_id).nazov
         if kruzok:

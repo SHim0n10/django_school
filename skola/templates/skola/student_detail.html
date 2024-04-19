@@ -5,5 +5,7 @@
     <strong>Trieda: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a>
     <br>
     <strong>Triedny učiteľ: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=ucitel.id %}">{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</a>
+    <br>
+    <strong>Adresa: </strong>{{student.ulica}}, {{student.psc}} {{student.obec}}
     {%endif%}
 {% endblock content %}

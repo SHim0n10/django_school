@@ -6,6 +6,7 @@
     {%endif%}
     {% if kruzok %}
     <br>
-    <strong>Krúžok: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'kruzok' kruzok=kruzok.skratka %}">{{kruzok.nazov}}</a>
+    <strong>Krúžok: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'kruzok' kruzok=kruzok.skratka %}">{{kruzok.nazov}}</a><br>
     {% endif %}
+    <strong>Adresa: </strong>{{ucitel.ulica}}, {{ucitel.psc}} {{ucitel.obec}}
 {% endblock content %}
