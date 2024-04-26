@@ -12,4 +12,6 @@ urlpatterns = [
     path('triedy/<trieda>/', views.vypis_trieda, name='trieda'),
     path('kruzky/', views.vypis_kruzky, name='kruzky'),
     path('kruzky/<kruzok>/', views.vypis_kruzok, name='kruzok'),
+    path('uzivatel/pridat/', views.pridat_uzivatel, name='pridat_uzivatel'),
+    path('uzivatel/pridat2/', views.pridat_uzivatel2, name='pridat_uzivatel2'),
 ]
