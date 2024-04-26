@@ -44,8 +44,16 @@ for i in studenti:
         start_date = date(today.year - 19, 1, 1)
         end_date = date(today.year - 19, 12, 31)
 
+
+    # pre ucitelov
+    # number = random.randint(28, 65)
+    # start_date = date(today.year - number, 1, 1)
+    # end_date = date(today.year - number, 12, 31)
+
     num_days = (end_date - start_date).days
     rand_days = random.randint(1, num_days)
     random_date = start_date + timedelta(days=rand_days)
     
+    i.narodenie = random_date
+    i.save()
 

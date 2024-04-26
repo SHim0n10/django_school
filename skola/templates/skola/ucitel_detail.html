@@ -2,11 +2,11 @@
 {% block content %}
     <h2>Učiteľ: {{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
     {% if trieda %}
-    <strong>Trieda: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a>
+    <strong>Trieda: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a><br>
     {%endif%}
     {% if kruzok %}
-    <br>
     <strong>Krúžok: </strong> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'kruzok' kruzok=kruzok.skratka %}">{{kruzok.nazov}}</a><br>
     {% endif %}
-    <strong>Adresa: </strong>{{ucitel.ulica}}, {{ucitel.psc}} {{ucitel.obec}}
+    <strong>Adresa: </strong>{{ucitel.ulica}}, {{ucitel.psc}} {{ucitel.obec}}<br>
+    <strong>Datum narodenia: </strong>{{ucitel.narodenie}}
 {% endblock content %}
